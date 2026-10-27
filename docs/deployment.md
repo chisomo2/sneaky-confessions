@@ -11,14 +11,14 @@ rest can be run in a terminal.
 
 ## 0. What carries over
 
-| Item                | Action                                                     |
-| ------------------- | ---------------------------------------------------------- |
-| Application code    | Copy this working tree to the new repository               |
-| Git history         | Fresh history (single initial commit) — no legacy remotes  |
-| Database schema     | Re-created by migrations `0000` → `0005`                   |
-| Database content    | **Not** copied unless you export it (see step 7)           |
-| Environment secrets | Re-issued by the new Supabase project                      |
-| Old repository      | Archived read-only, not deleted (step 8)                   |
+| Item                | Action                                                    |
+| ------------------- | --------------------------------------------------------- |
+| Application code    | Copy this working tree to the new repository              |
+| Git history         | Fresh history (single initial commit) — no legacy remotes |
+| Database schema     | Re-created by migrations `0000` → `0005`                  |
+| Database content    | **Not** copied unless you export it (see step 7)          |
+| Environment secrets | Re-issued by the new Supabase project                     |
+| Old repository      | Archived read-only, not deleted (step 8)                  |
 
 ---
 
@@ -41,7 +41,7 @@ git ls-files | grep -Ei '(^|/)\.env$|secret|credential|\.pem$|\.key$'   # only .
 # create an orphan snapshot of the current tree
 git checkout --orphan clean-main
 git add -A
-git commit -m "Initial commit: DMI Confessions production baseline"
+git commit -m "Initial commit: Sneaky Confessions production baseline"
 git push -u https://github.com/<owner>/dmi-confessions.git clean-main:main
 ```
 
@@ -107,13 +107,13 @@ on conflict do nothing;
    empty (the build emits `.vercel/output`).
 3. Environment variables (Production, Preview, Development):
 
-   | Name                            | Value                        |
-   | ------------------------------- | ---------------------------- |
-   | `VITE_SUPABASE_URL`             | project URL                  |
-   | `VITE_SUPABASE_PUBLISHABLE_KEY` | publishable key              |
-   | `SUPABASE_URL`                  | same project URL             |
-   | `SUPABASE_PUBLISHABLE_KEY`      | same publishable key         |
-   | `SUPABASE_SERVICE_ROLE_KEY`     | secret key (server only)     |
+   | Name                            | Value                    |
+   | ------------------------------- | ------------------------ |
+   | `VITE_SUPABASE_URL`             | project URL              |
+   | `VITE_SUPABASE_PUBLISHABLE_KEY` | publishable key          |
+   | `SUPABASE_URL`                  | same project URL         |
+   | `SUPABASE_PUBLISHABLE_KEY`      | same publishable key     |
+   | `SUPABASE_SERVICE_ROLE_KEY`     | secret key (server only) |
 
 4. Deploy, then go back to Supabase step 3.5 and set the Site URL to the
    deployment domain, and add the reset-password redirect.

@@ -10,13 +10,13 @@ export const Route = createFileRoute("/reset-password")({
   ssr: false,
   head: () => ({
     meta: [
-      { title: "Reset password · DMI Confessions" },
+      { title: "Reset password · Sneaky Confessions" },
       { name: "robots", content: "noindex, nofollow" },
-      { name: "description", content: "Choose a new password for your DMI Confessions alias." },
-      { property: "og:title", content: "Reset password · DMI Confessions" },
+      { name: "description", content: "Choose a new password for your Sneaky Confessions alias." },
+      { property: "og:title", content: "Reset password · Sneaky Confessions" },
       {
         property: "og:description",
-        content: "Choose a new password for your DMI Confessions alias.",
+        content: "Choose a new password for your Sneaky Confessions alias.",
       },
     ],
   }),
@@ -68,7 +68,7 @@ function ResetPassword() {
     return (
       <div className="mx-auto max-w-sm py-16 text-center">
         <div className="text-5xl">🔗</div>
-        <h1 className="mt-3 text-2xl font-bold">Link expired</h1>
+        <h1 className="mt-3 text-xl font-bold">Link expired</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Request a fresh reset link from the sign-in page.
         </p>
@@ -80,7 +80,7 @@ function ResetPassword() {
 
   return (
     <div className="mx-auto max-w-sm py-8">
-      <h1 className="text-3xl font-extrabold">New password</h1>
+      <h1 className="text-2xl font-extrabold">New password</h1>
       <p className="mb-6 mt-1 text-sm text-muted-foreground">
         Use at least 6 characters. Your alias stays the same.
       </p>

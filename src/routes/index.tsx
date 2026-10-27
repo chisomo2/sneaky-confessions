@@ -19,12 +19,12 @@ export const Route = createFileRoute("/")({
   }),
   head: () => ({
     meta: [
-      { title: "DMI Confessions — Campus secrets, after dark" },
+      { title: "Sneaky Confessions — Campus secrets, after dark" },
       {
         name: "description",
-        content: "Drop anonymous campus confessions, react, vote and spill the tea at DMI.",
+        content: "Drop anonymous campus confessions, react, vote and spill the tea.",
       },
-      { property: "og:title", content: "DMI Confessions — Campus secrets, after dark" },
+      { property: "og:title", content: "Sneaky Confessions — Campus secrets, after dark" },
       {
         property: "og:description",
         content: "Anonymous confessions, gossip and hot takes from campus.",
@@ -163,7 +163,7 @@ function Feed() {
       </section>
       <aside className="hidden space-y-4 lg:block">
         <div className="rounded-2xl border bg-card/70 p-5">
-          <h3 className="mb-2 text-lg font-bold">Ghost mode is on 👻</h3>
+          <h3 className="mb-2 text-base font-bold">Ghost mode is on 👻</h3>
           <p className="text-sm text-muted-foreground">
             Post, vote and comment without an account. Want clout? Grab an alias and build karma —
             or stay incognito anytime.
@@ -230,7 +230,7 @@ function Empty({ tab, signedIn }: { tab: Tab; signedIn: boolean }) {
   return (
     <div className="rounded-2xl border border-dashed p-12 text-center">
       <div className="mb-3 text-5xl">🌙</div>
-      <h3 className="text-xl font-bold">{msg[0]}</h3>
+      <h3 className="text-lg font-bold">{msg[0]}</h3>
       <p className="mt-1 text-sm text-muted-foreground">{msg[1]}</p>
       {tab === "following" && !signedIn && (
         <Link to="/auth" className="mt-4 inline-block text-sm font-semibold text-primary">

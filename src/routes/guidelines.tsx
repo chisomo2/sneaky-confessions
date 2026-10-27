@@ -4,12 +4,12 @@ import { LegalPage } from "@/components/LegalPage";
 export const Route = createFileRoute("/guidelines")({
   head: () => ({
     meta: [
-      { title: "Community guidelines · DMI Confessions" },
-      { name: "description", content: "How to keep DMI Confessions funny, honest and safe." },
-      { property: "og:title", content: "Community guidelines · DMI Confessions" },
+      { title: "Community guidelines · Sneaky Confessions" },
+      { name: "description", content: "How to keep Sneaky Confessions funny, honest and safe." },
+      { property: "og:title", content: "Community guidelines · Sneaky Confessions" },
       {
         property: "og:description",
-        content: "How to keep DMI Confessions funny, honest and safe.",
+        content: "How to keep Sneaky Confessions funny, honest and safe.",
       },
     ],
   }),

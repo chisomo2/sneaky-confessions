@@ -1,4 +1,4 @@
-const CACHE = "dmi-confessions-v1";
+const CACHE = "sneaky-confessions-v1";
 const PRECACHE = ["/favicon.png", "/pwa-192.png", "/pwa-512.png", "/manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {

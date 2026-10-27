@@ -4,13 +4,13 @@ import { LegalPage } from "@/components/LegalPage";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy · DMI Confessions" },
+      { title: "Privacy · Sneaky Confessions" },
       {
         name: "description",
-        content: "What DMI Confessions stores, what stays private, and how long we keep it.",
+        content: "What Sneaky Confessions stores, what stays private, and how long we keep it.",
       },
-      { property: "og:title", content: "Privacy · DMI Confessions" },
-      { property: "og:description", content: "What DMI Confessions stores and why." },
+      { property: "og:title", content: "Privacy · Sneaky Confessions" },
+      { property: "og:description", content: "What Sneaky Confessions stores and why." },
     ],
   }),
   component: Privacy,
@@ -20,7 +20,7 @@ function Privacy() {
   return (
     <LegalPage
       title="Privacy"
-      intro="DMI Confessions is pseudonymous, not untraceable. This page explains exactly what we store so you can decide what to share."
+      intro="Sneaky Confessions is pseudonymous, not untraceable. This page explains exactly what we store so you can decide what to share."
     >
       <h2>What we collect</h2>
       <ul>

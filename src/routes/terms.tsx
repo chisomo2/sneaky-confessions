@@ -4,10 +4,10 @@ import { LegalPage } from "@/components/LegalPage";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms · DMI Confessions" },
-      { name: "description", content: "The rules for using DMI Confessions." },
-      { property: "og:title", content: "Terms · DMI Confessions" },
-      { property: "og:description", content: "The rules for using DMI Confessions." },
+      { title: "Terms · Sneaky Confessions" },
+      { name: "description", content: "The rules for using Sneaky Confessions." },
+      { property: "og:title", content: "Terms · Sneaky Confessions" },
+      { property: "og:description", content: "The rules for using Sneaky Confessions." },
     ],
   }),
   component: Terms,
@@ -17,7 +17,7 @@ function Terms() {
   return (
     <LegalPage
       title="Terms"
-      intro="DMI Confessions is a community project for sharing campus stories. By using it, you agree to these terms."
+      intro="Sneaky Confessions is a community project for sharing campus stories. By using it, you agree to these terms."
     >
       <h2>Using the app</h2>
       <p>

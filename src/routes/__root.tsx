@@ -22,8 +22,8 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">This secret doesn't exist</h2>
+        <h1 className="text-6xl font-bold text-foreground">404</h1>
+        <h2 className="mt-4 text-lg font-semibold text-foreground">This secret doesn't exist</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           Maybe it was never told. Maybe it was deleted.
         </p>
@@ -47,7 +47,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+        <h1 className="text-lg font-semibold tracking-tight text-foreground">
           This page didn't load
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">Something went wrong on our end.</p>
@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { title: "DMI Confessions" },
+      { title: "Sneaky Confessions" },
       { name: "description", content: "Anonymous campus confessions, gossip and hot takes." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -86,7 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
-      { name: "apple-mobile-web-app-title", content: "Confessions" },
+      { name: "apple-mobile-web-app-title", content: "Sneaky" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -167,7 +167,7 @@ function SiteFooter() {
   return (
     <footer className="mx-auto w-full max-w-5xl px-4 pb-[calc(6rem+env(safe-area-inset-bottom))] pt-2 md:pb-8">
       <div className="flex flex-wrap items-center gap-x-4 gap-y-1 border-t pt-4 text-xs text-muted-foreground">
-        <span>© {new Date().getFullYear()} DMI Confessions</span>
+        <span>© {new Date().getFullYear()} Sneaky Confessions</span>
         <Link to="/guidelines" className="inline-flex min-h-8 items-center hover:text-foreground">
           Guidelines
         </Link>

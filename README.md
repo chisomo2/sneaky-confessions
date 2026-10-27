@@ -1,4 +1,4 @@
-# DMI Confessions
+# Sneaky Confessions
 
 Anonymous campus confessions with optional pseudonymous aliases, karma, reactions,
 threaded comments and a live leaderboard. Installable as a PWA.
@@ -24,14 +24,14 @@ npm run dev              # http://localhost:8080
 
 ### Environment variables
 
-| Variable                        | Where                    | Purpose                                |
-| ------------------------------- | ------------------------ | -------------------------------------- |
-| `VITE_SUPABASE_URL`             | browser + build          | Supabase project URL                   |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` | browser + build          | Supabase anon / publishable key        |
-| `SUPABASE_URL`                  | server runtime           | Same URL for SSR                       |
-| `SUPABASE_PUBLISHABLE_KEY`      | server runtime           | Same key for SSR                       |
-| `SUPABASE_SERVICE_ROLE_KEY`     | server only              | Admin client; bypasses RLS. Never ship |
-| `SUPABASE_DB_URL`               | local tooling only       | Direct Postgres URL for drizzle-kit    |
+| Variable                        | Where              | Purpose                                |
+| ------------------------------- | ------------------ | -------------------------------------- |
+| `VITE_SUPABASE_URL`             | browser + build    | Supabase project URL                   |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | browser + build    | Supabase anon / publishable key        |
+| `SUPABASE_URL`                  | server runtime     | Same URL for SSR                       |
+| `SUPABASE_PUBLISHABLE_KEY`      | server runtime     | Same key for SSR                       |
+| `SUPABASE_SERVICE_ROLE_KEY`     | server only        | Admin client; bypasses RLS. Never ship |
+| `SUPABASE_DB_URL`               | local tooling only | Direct Postgres URL for drizzle-kit    |
 
 `VITE_*` values are inlined into the client bundle at build time, so they must be
 present when the build runs. Never put the service-role key in a `VITE_` variable.

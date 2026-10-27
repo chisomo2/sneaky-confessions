@@ -11,10 +11,10 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/notifications")({
   head: () => ({
     meta: [
-      { title: "Notifications · DMI Confessions" },
+      { title: "Notifications · Sneaky Confessions" },
       { name: "robots", content: "noindex, nofollow" },
       { name: "description", content: "Replies, followed aliases and upvote milestones." },
-      { property: "og:title", content: "Notifications · DMI Confessions" },
+      { property: "og:title", content: "Notifications · Sneaky Confessions" },
       { property: "og:description", content: "Your latest campus alerts." },
     ],
   }),
@@ -85,7 +85,7 @@ function Notifs() {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <h1 className="mb-5 text-3xl font-extrabold">Notifications</h1>
+      <h1 className="mb-5 text-2xl font-extrabold">Notifications</h1>
       {isLoading && <div className="h-20 animate-pulse rounded-xl bg-card" />}
       {isError && (
         <p className="rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive">

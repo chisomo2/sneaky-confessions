@@ -14,9 +14,9 @@ export const Route = createFileRoute("/admin")({
   ssr: false,
   head: () => ({
     meta: [
-      { title: "Admin · DMI Confessions" },
-      { name: "description", content: "Moderation tools for DMI Confessions." },
-      { property: "og:title", content: "Admin · DMI Confessions" },
+      { title: "Admin · Sneaky Confessions" },
+      { name: "description", content: "Moderation tools for Sneaky Confessions." },
+      { property: "og:title", content: "Admin · Sneaky Confessions" },
       { property: "og:description", content: "Moderation tools." },
       { name: "robots", content: "noindex" },
     ],
@@ -38,7 +38,7 @@ function Admin() {
     );
   return (
     <div className="mx-auto max-w-3xl">
-      <h1 className="mb-5 text-2xl font-extrabold sm:text-3xl">🛡️ Moderation</h1>
+      <h1 className="mb-5 text-xl font-extrabold sm:text-2xl">🛡️ Moderation</h1>
       <Tabs defaultValue="queue">
         <TabsList className="grid h-auto w-full grid-cols-2 gap-1 p-1 sm:inline-flex sm:h-9 sm:w-auto sm:gap-0">
           <TabsTrigger value="queue" className="min-h-10 sm:min-h-0">

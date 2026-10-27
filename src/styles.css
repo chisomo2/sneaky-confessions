@@ -92,6 +92,7 @@
     border-color: var(--color-border);
   }
   html {
+    font-size: 15px;
     -webkit-tap-highlight-color: transparent;
     background-color: var(--color-background);
   }

@@ -9,7 +9,7 @@ import { useSession } from "@/lib/session";
 export const Route = createFileRoute("/c/$id")({
   head: () => ({
     meta: [
-      { title: "Confession · DMI Confessions" },
+      { title: "Confession · Sneaky Confessions" },
       { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/c/$id")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "A confession on DMI Confessions" },
+      { property: "og:title", content: "A confession on Sneaky Confessions" },
       { property: "og:description", content: "Read and join the anonymous discussion." },
     ],
   }),
@@ -63,7 +63,7 @@ function Detail() {
     <div className="mx-auto max-w-2xl space-y-6">
       <ConfessionCard c={c} full />
       <section id="comments" className="flex h-[70dvh] scroll-mt-20 flex-col border-t">
-        <h2 className="py-4 text-lg font-semibold">Comments</h2>
+        <h2 className="py-4 text-base font-semibold">Comments</h2>
         <CommentThread id={id} />
       </section>
     </div>

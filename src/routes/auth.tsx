@@ -11,13 +11,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Get your alias · DMI Confessions" },
+      { title: "Get your alias · Sneaky Confessions" },
       { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content: "Claim an anonymous alias, earn karma and build campus clout.",
       },
-      { property: "og:title", content: "Claim your alias on DMI Confessions" },
+      { property: "og:title", content: "Claim your alias on Sneaky Confessions" },
       { property: "og:description", content: "Stay anonymous, earn clout." },
     ],
   }),
@@ -124,7 +124,7 @@ function AuthPage() {
     return (
       <div className="mx-auto max-w-sm py-16 text-center">
         <div className="text-5xl">📬</div>
-        <h1 className="mt-3 text-2xl font-bold">Check your email</h1>
+        <h1 className="mt-3 text-xl font-bold">Check your email</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Confirm your address to activate @{handle.toLowerCase()}.
         </p>
@@ -133,7 +133,7 @@ function AuthPage() {
 
   return (
     <div className="mx-auto max-w-sm py-8">
-      <h1 className="text-3xl font-extrabold">
+      <h1 className="text-2xl font-extrabold">
         {mode === "up" ? "Claim your alias" : "Welcome back"}
       </h1>
       <p className="mb-6 mt-1 text-sm text-muted-foreground">

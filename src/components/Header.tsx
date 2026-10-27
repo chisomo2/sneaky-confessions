@@ -77,7 +77,7 @@ export function Header() {
             to="/"
             className="shrink-0 font-display text-lg font-extrabold tracking-tight sm:text-xl"
           >
-            <span className="neon-text">DMI</span> Confessions
+            <span className="neon-text">Sneaky</span> Confessions
           </Link>
           <div className="ml-auto flex items-center gap-1 sm:gap-2">
             <button

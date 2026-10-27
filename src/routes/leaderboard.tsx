@@ -6,12 +6,12 @@ import { TITLES, titleFor } from "@/lib/app";
 export const Route = createFileRoute("/leaderboard")({
   head: () => ({
     meta: [
-      { title: "Campus Leaderboard · DMI Confessions" },
+      { title: "Campus Leaderboard · Sneaky Confessions" },
       {
         name: "description",
         content: "Top campus voices ranked by karma, followers and activity.",
       },
-      { property: "og:title", content: "DMI Campus Leaderboard" },
+      { property: "og:title", content: "Sneaky Confessions Leaderboard" },
       { property: "og:description", content: "Who runs the campus whisper network?" },
     ],
   }),
@@ -30,7 +30,7 @@ function Leaderboard() {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <h1 className="mb-1 text-3xl font-extrabold">
+      <h1 className="mb-1 text-2xl font-extrabold">
         🏆 <span className="neon-text">Campus Leaderboard</span>
       </h1>
       <p className="mb-5 text-sm text-muted-foreground">

@@ -13,10 +13,10 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/u/$handle")({
   head: ({ params }) => ({
     meta: [
-      { title: `@${params.handle} · DMI Confessions` },
+      { title: `@${params.handle} · Sneaky Confessions` },
       { name: "robots", content: "noindex, nofollow" },
       { name: "description", content: `Karma, badges and confessions from @${params.handle}.` },
-      { property: "og:title", content: `@${params.handle} on DMI Confessions` },
+      { property: "og:title", content: `@${params.handle} on Sneaky Confessions` },
       { property: "og:description", content: `See @${params.handle}'s campus clout.` },
     ],
   }),
@@ -128,7 +128,7 @@ function ProfilePage() {
             {s.avatar}
           </div>
           <div className="min-w-0 flex-1">
-            <h1 className="break-all text-xl font-extrabold sm:text-2xl">@{s.handle}</h1>
+            <h1 className="break-all text-lg font-extrabold sm:text-xl">@{s.handle}</h1>
             <p className="font-display text-sm font-bold neon-text">{titleFor(karma)}</p>
             {s.bio && <p className="mt-2 text-sm text-muted-foreground">{s.bio}</p>}
             {s.status !== "active" && (
@@ -195,7 +195,7 @@ function ProfilePage() {
           />
         )}
       </div>
-      <h2 className="text-lg font-bold">Published as @{s.handle}</h2>
+      <h2 className="text-base font-bold">Published as @{s.handle}</h2>
       {data.posts.length === 0 ? (
         <p className="rounded-2xl border border-dashed p-10 text-center text-sm text-muted-foreground">
           Nothing public yet. The mystery deepens.
