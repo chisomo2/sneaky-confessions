@@ -24,7 +24,7 @@ rest can be run in a terminal.
 
 ## 1. Create the new GitHub repository **manual**
 
-1. github.com → **New repository** → name `dmi-confessions`, visibility
+1. github.com → **New repository** → name `sneaky-confessions`, visibility
    **Public**, **no** README / .gitignore / license.
 2. Keep the old repository as-is for now; it remains the rollback path.
 
@@ -42,7 +42,7 @@ git ls-files | grep -Ei '(^|/)\.env$|secret|credential|\.pem$|\.key$'   # only .
 git checkout --orphan clean-main
 git add -A
 git commit -m "Initial commit: Sneaky Confessions production baseline"
-git push -u https://github.com/<owner>/dmi-confessions.git clean-main:main
+git push -u https://github.com/<owner>/sneaky-confessions.git clean-main:main
 ```
 
 The legacy repository is never force-pushed or rewritten.
