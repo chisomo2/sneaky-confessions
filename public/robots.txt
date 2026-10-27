@@ -1,0 +1,13 @@
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Disallow: /c/
+Disallow: /u/
+Disallow: /admin
+Disallow: /auth
+Disallow: /reset-password
+Disallow: /notifications
