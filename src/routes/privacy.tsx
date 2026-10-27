@@ -102,7 +102,7 @@ function Privacy() {
       </p>
 
       <h2>Age</h2>
-      <p>This is a campus community for DMI students. Do not use it if you are under 16.</p>
+      <p>This is a campus community for students. Do not use it if you are under 16.</p>
 
       <h2>Changes</h2>
       <p>
