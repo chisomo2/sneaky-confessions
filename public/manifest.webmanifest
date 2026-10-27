@@ -1,0 +1,33 @@
+{
+  "name": "DMI Confessions",
+  "short_name": "Confessions",
+  "description": "Anonymous campus confessions, gossip and hot takes.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0e0b14",
+  "theme_color": "#0e0b14",
+  "lang": "en",
+  "categories": ["social", "news"],
+  "icons": [
+    {
+      "src": "/pwa-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

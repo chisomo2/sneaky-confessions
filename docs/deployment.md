@@ -15,7 +15,7 @@ rest can be run in a terminal.
 | ------------------- | ---------------------------------------------------------- |
 | Application code    | Copy this working tree to the new repository               |
 | Git history         | Fresh history (single initial commit) — no legacy remotes  |
-| Database schema     | Re-created by migrations `0000` → `0004`                   |
+| Database schema     | Re-created by migrations `0000` → `0005`                   |
 | Database content    | **Not** copied unless you export it (see step 7)           |
 | Environment secrets | Re-issued by the new Supabase project                      |
 | Old repository      | Archived read-only, not deleted (step 8)                   |
@@ -70,8 +70,9 @@ Run each file once, in this order. Each file wraps its work in a transaction.
 3. `drizzle/migrations/0002_product_ops.sql`
 4. `drizzle/migrations/0003_security_perf.sql`
 5. `drizzle/migrations/0004_comment_threads.sql`
+6. `drizzle/migrations/0005_feed_rank.sql`
 
-Do not re-run any file. For later schema changes, add `0005_*.sql`, register it in
+Do not re-run any file. For later schema changes, add `0006_*.sql`, register it in
 `scripts/verify-db.mjs`, and run `npm run test:db` first.
 
 Then verify (read-only, returns one row):

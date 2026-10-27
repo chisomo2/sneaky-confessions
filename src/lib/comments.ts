@@ -53,7 +53,8 @@ export function useComments(id: string) {
         .from("comments")
         .select(COMMENT_COLUMNS)
         .in("parent_id", rootIds)
-        .order("created_at", { ascending: true });
+        .order("created_at", { ascending: false })
+        .order("id", { ascending: false });
       if (error) throw error;
       return (data ?? []) as unknown as Comment[];
     },

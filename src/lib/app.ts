@@ -48,16 +48,6 @@ export function badgesFor(s: { karma: number; followers: number; posts: number }
   return b;
 }
 
-/** Hot ranking: net votes + engagement, decayed by age in hours. */
-export function hotScore(
-  c: { upvotes: number; downvotes: number; comment_count: number; created_at: string },
-  now = Date.now(),
-) {
-  const hours = (now - new Date(c.created_at).getTime()) / 36e5;
-  const points = c.upvotes - c.downvotes + c.comment_count * 0.5;
-  return (points + 1) / Math.pow(hours + 2, 1.5);
-}
-
 export function timeAgo(d: string) {
   const s = (Date.now() - new Date(d).getTime()) / 1000;
   if (s < 60) return "just now";

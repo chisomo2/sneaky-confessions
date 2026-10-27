@@ -1,7 +1,7 @@
 # DMI Confessions
 
 Anonymous campus confessions with optional pseudonymous aliases, karma, reactions,
-threaded comments and a live leaderboard.
+threaded comments and a live leaderboard. Installable as a PWA.
 
 Built with React 19 + TanStack Start (SSR), Tailwind CSS 4, Supabase (Postgres,
 Auth, Realtime) and deployed to Vercel through Nitro.
@@ -47,9 +47,9 @@ npm run test:db    # PGlite harness: runs every migration from scratch
 ```
 
 `npm run test:db` needs no database or secrets. It boots an empty in-memory
-Postgres (PGlite), applies `0000` → `0004` in order and asserts RLS, rate limits,
+Postgres (PGlite), applies `0000` → `0005` in order and asserts RLS, rate limits,
 report dedupe, feed ranking/search/pagination, the posting kill switch, retention
-cleanup, threaded comments and the live handover query (68 checks).
+cleanup, threaded comments and the live handover query (69 checks).
 
 ## Database migrations
 
@@ -64,9 +64,10 @@ editor (or via `psql "$SUPABASE_DB_URL" -f <file>`):
 3. `0002_product_ops.sql` — feed pagination, notifications, retention
 4. `0003_security_perf.sql` — privileges, IP hashing, moderation, indexes
 5. `0004_comment_threads.sql` — threaded replies (`comments.parent_id`)
+6. `0005_feed_rank.sql` — Latest is the default feed; Hot ranks by popularity
 
 **Existing project** — never re-run an applied migration. To change the schema,
-add `drizzle/migrations/0005_*.sql`, add it to `scripts/verify-db.mjs`, then run
+add `drizzle/migrations/0006_*.sql`, add it to `scripts/verify-db.mjs`, then run
 the harness before applying it.
 
 After a fresh setup, grant yourself admin once:

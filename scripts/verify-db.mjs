@@ -22,6 +22,10 @@ const migration4 = readFileSync(
   new URL("../drizzle/migrations/0004_comment_threads.sql", import.meta.url),
   "utf8",
 );
+const migration5 = readFileSync(
+  new URL("../drizzle/migrations/0005_feed_rank.sql", import.meta.url),
+  "utf8",
+);
 
 const db = new PGlite();
 const results = [];
@@ -136,6 +140,7 @@ async function main() {
   await db.exec(migration2);
   await db.exec(migration3);
   await db.exec(migration4);
+  await db.exec(migration5);
 
   await sql(
     "insert into auth.users (id, raw_user_meta_data, is_anonymous) values ($1, '{}'::jsonb, true)",
@@ -833,6 +838,46 @@ async function main() {
           .n,
     );
     assert(anonFeed === visible, `anon role feed=${anonFeed} visible=${visible}`);
+  });
+
+  await run("hot feed ranks by popularity and latest stays newest-first", async () => {
+    const seeded = await sql(`
+      insert into public.confessions (body, category, created_at, upvotes, downvotes, comment_count)
+      values
+        ('hot ranking old popular post', 'Confessions', now() - interval '60 days', 4, 0, 0),
+        ('hot ranking quiet new post', 'Confessions', now(), 0, 0, 0),
+        ('hot ranking comment heavy post', 'Confessions', now() - interval '30 days', 0, 0, 6),
+        ('hot ranking downvoted post', 'Confessions', now() - interval '10 days', 1, 5, 0)
+      returning id, body
+    `);
+    const idOf = (body) => seeded.find((row) => row.body === body).id;
+    const hot = await asRole("anon", async () =>
+      sql("select id from public.feed_page('hot', null, 'hot ranking', 50, 0)"),
+    );
+    assert(
+      hot.map((row) => row.id).join() ===
+        [
+          idOf("hot ranking comment heavy post"),
+          idOf("hot ranking old popular post"),
+          idOf("hot ranking quiet new post"),
+          idOf("hot ranking downvoted post"),
+        ].join(),
+      `hot=${JSON.stringify(hot)}`,
+    );
+    const latest = await asRole("anon", async () =>
+      sql("select id from public.feed_page(null, null, 'hot ranking', 50, 0)"),
+    );
+    assert(
+      latest.map((row) => row.id).join() ===
+        [
+          idOf("hot ranking quiet new post"),
+          idOf("hot ranking downvoted post"),
+          idOf("hot ranking comment heavy post"),
+          idOf("hot ranking old popular post"),
+        ].join(),
+      `latest=${JSON.stringify(latest)}`,
+    );
+    await sql("delete from public.confessions where body like 'hot ranking %'");
   });
 
   await run("kill switch is admin-only and blocks writes while paused", async () => {

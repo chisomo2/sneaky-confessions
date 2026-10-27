@@ -8,12 +8,12 @@ import { CATEGORIES, errMsg } from "@/lib/app";
 import { useSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 
-type Tab = "hot" | "latest" | "following";
+type Tab = "latest" | "hot" | "following";
 type Search = { tab?: Tab | undefined; cat?: string | undefined; q?: string | undefined };
 
 export const Route = createFileRoute("/")({
   validateSearch: (s: Record<string, unknown>): Search => ({
-    tab: s["tab"] === "latest" || s["tab"] === "following" ? s["tab"] : undefined,
+    tab: s["tab"] === "hot" || s["tab"] === "following" ? s["tab"] : undefined,
     cat: typeof s["cat"] === "string" ? s["cat"] : undefined,
     q: typeof s["q"] === "string" ? s["q"] : undefined,
   }),
@@ -53,7 +53,7 @@ type FeedRow = {
 };
 
 function Feed() {
-  const { tab = "hot", cat, q } = Route.useSearch();
+  const { tab = "latest", cat, q } = Route.useSearch();
   const { profile, user } = useSession();
 
   const { data, isLoading, isError, error, fetchNextPage, hasNextPage, isFetchingNextPage } =
@@ -91,8 +91,8 @@ function Feed() {
   });
 
   const tabs: { id: Tab; label: string }[] = [
-    { id: "hot", label: "🔥 Hot" },
     { id: "latest", label: "🌙 Latest" },
+    { id: "hot", label: "🔥 Hot" },
     { id: "following", label: "👥 Following" },
   ];
 
@@ -104,7 +104,7 @@ function Feed() {
             <Link
               key={t.id}
               to="/"
-              search={{ tab: t.id === "hot" ? undefined : t.id, cat, q }}
+              search={{ tab: t.id === "latest" ? undefined : t.id, cat, q }}
               className={cn(
                 "grid min-h-10 place-items-center whitespace-nowrap rounded-full px-3 text-sm transition sm:px-5",
                 tab === t.id ? "bg-card text-foreground glow" : "text-muted-foreground",
@@ -115,14 +115,14 @@ function Feed() {
           ))}
         </div>
         <div className="no-scrollbar fade-x -mx-4 mb-4 flex snap-x gap-2 overflow-x-auto overscroll-x-contain px-4 sm:mx-0 sm:px-0">
-          <Link to="/" search={{ tab: tab === "hot" ? undefined : tab, q }} className="shrink-0">
+          <Link to="/" search={{ tab: tab === "latest" ? undefined : tab, q }} className="shrink-0">
             <Chip active={!cat}>All</Chip>
           </Link>
           {CATEGORIES.map((c) => (
             <Link
               key={c}
               to="/"
-              search={{ tab: tab === "hot" ? undefined : tab, cat: c, q }}
+              search={{ tab: tab === "latest" ? undefined : tab, cat: c, q }}
               className="shrink-0"
             >
               <Chip active={cat === c}>{c}</Chip>
